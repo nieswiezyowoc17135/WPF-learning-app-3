@@ -11,9 +11,9 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
@@ -21,7 +21,7 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Label Content="Nakład: "  VerticalAlignment="Center"/>
+            <Label Content="Nakład: "  VerticalAlignment="Center" Margin="5"/>
             <TextBox Grid.Column="1" Margin="15"/>
         </Grid>
         <Grid Grid.Row="1">
@@ -30,9 +30,62 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Content="Format" VerticalAlignment="Center"/>
+            <Label Grid.Column="0" Content="Format" VerticalAlignment="Center" Margin="5"/>
             <Slider Grid.Column="1" VerticalAlignment="Center"/>
-            <Label Grid.Column="2" VerticalAlignment="Center" Content="A4 - cena 50gr/szt"/>
+            <Label Grid.Column="2" VerticalAlignment="Center" Content="A4 - cena 50gr/szt" Margin="5"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <CheckBox Grid.Column="0" VerticalAlignment="Center" Margin="5">Kolorowy papier - cena + 50%</CheckBox>
+            <ComboBox Grid.Column="1" Margin="15"/>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Grid.Column="0" Header="Gramatura" Margin="5">
+                <StackPanel>
+                    <RadioButton Content="80mg/m^2"/>
+                    <RadioButton Content="120mg/m^2 - cena x2"/>
+                    <RadioButton Content="200mg/m^2 - cena x2,5"/>
+                    <RadioButton Content="240mg/m^2 - cena x3"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Grid.Column="1" Header="Opcje wydruku" Margin="5">
+                <StackPanel>
+                    <CheckBox Content="druk w kolorze - cena +30%"/>
+                    <CheckBox Content="druk dwustronny - cena +50%"/>
+                    <CheckBox Content="lakier UV - cena +20%"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Grid.Column="2" Header="Termin realizacji" Margin="5">
+                <StackPanel>
+                    <RadioButton Content="Standard"/>
+                    <RadioButton Content="Ekspress - cena +15zł"/>
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Label Content="Podsumowanie zamówienia" VerticalAlignment="Center" FontWeight="Bold" Margin="5"/>
+        </Grid>
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox AcceptsReturn="true" IsReadOnly="true" TextWrapping="Wrap" Grid.ColumnSpan="2" Margin="5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel nisl quis mauris hendrerit commodo eget id ligula. Sed lectus tortor, lobortis et mollis sed, aliquet quis ipsum. Proin vitae velit sit amet nisl auctor commodo nec eget arcu. Phasellus accumsan felis velit, non suscipit magna aliquet sed. Cras in cursus urna, lacinia ultricies nunc. Aliquam elementum orci leo, mattis volutpat erat bibendum ac. Cras maximus eros at suscipit consectetur. Nam gravida urna elit, porta euismod tortor vestibulum sit amet.
+            </TextBox>
+        </Grid>
+        <Grid Grid.Row="6">
+            <WrapPanel HorizontalAlignment="Right">
+                <Button Content="OK" Height="40" Width="100" FontSize="20" VerticalAlignment="Center" Margin="5"/>
+                <Button Content="Anuluj" Height="40" Width="100" FontSize="20" Margin="5" VerticalAlignment="Center"/>
+            </WrapPanel>
         </Grid>
     </Grid>
 </Window>
