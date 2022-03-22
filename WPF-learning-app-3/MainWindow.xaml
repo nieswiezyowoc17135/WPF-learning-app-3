@@ -21,18 +21,19 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Label Content="Nakład: "  VerticalAlignment="Center" Margin="5"/>
-            <TextBox Grid.Column="1" Margin="15"/>
+            <Label Content="Nakład: "  VerticalAlignment="Center" Margin="5" />
+            <TextBox Grid.Column="1" Margin="15" TextChanged="TextBox_TextChanged" Name="TextBoxInput"/>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="204*"/>
+                <ColumnDefinition Width="421*"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Content="Format" VerticalAlignment="Center" Margin="5"/>
-            <Slider Grid.Column="1" VerticalAlignment="Center"/>
-            <Label Grid.Column="2" VerticalAlignment="Center" Content="A4 - cena 50gr/szt" Margin="5"/>
+            <Label Grid.Column="0" Content="Format" VerticalAlignment="Center" Margin="5,0,5,0"/>
+            <Slider Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="0,0,117,0" ValueChanged="Slider_ValueChanged" Maximum="5" Minimum="0" TickFrequency="1" Name="slider1"/>
+            <Label Grid.Column="3" VerticalAlignment="Center" Content="A0 - cena Xgr/szt" Margin="5,0,5,0" Name="label_slider" />
         </Grid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -50,10 +51,10 @@
             </Grid.ColumnDefinitions>
             <GroupBox Grid.Column="0" Header="Gramatura" Margin="5">
                 <StackPanel>
-                    <RadioButton Content="80mg/m^2"/>
-                    <RadioButton Content="120mg/m^2 - cena x2"/>
-                    <RadioButton Content="200mg/m^2 - cena x2,5"/>
-                    <RadioButton Content="240mg/m^2 - cena x3"/>
+                    <RadioButton Content="80mg/m²" />
+                    <RadioButton Content="120mg/m² - cena x2"/>
+                    <RadioButton Content="200mg/m² - cena x2,5"/>
+                    <RadioButton Content="240mg/m² - cena x3"/>
                 </StackPanel>
             </GroupBox>
             <GroupBox Grid.Column="1" Header="Opcje wydruku" Margin="5">
@@ -77,15 +78,15 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBox AcceptsReturn="true" IsReadOnly="true" TextWrapping="Wrap" Grid.ColumnSpan="2" Margin="5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel nisl quis mauris hendrerit commodo eget id ligula. Sed lectus tortor, lobortis et mollis sed, aliquet quis ipsum. Proin vitae velit sit amet nisl auctor commodo nec eget arcu. Phasellus accumsan felis velit, non suscipit magna aliquet sed. Cras in cursus urna, lacinia ultricies nunc. Aliquam elementum orci leo, mattis volutpat erat bibendum ac. Cras maximus eros at suscipit consectetur. Nam gravida urna elit, porta euismod tortor vestibulum sit amet.
+            <TextBox AcceptsReturn="true" IsReadOnly="true" TextWrapping="Wrap" Grid.ColumnSpan="2" Margin="5" Name="TextBoxOutput" >
+
             </TextBox>
         </Grid>
         <Grid Grid.Row="6">
-            <WrapPanel HorizontalAlignment="Right">
+            <DockPanel HorizontalAlignment="Right">
                 <Button Content="OK" Height="40" Width="100" FontSize="20" VerticalAlignment="Center" Margin="5"/>
-                <Button Content="Anuluj" Height="40" Width="100" FontSize="20" Margin="5" VerticalAlignment="Center"/>
-            </WrapPanel>
+                <Button Content="Anuluj" Height="40" Width="100" FontSize="20" Margin="5" VerticalAlignment="Center" Click="Button_Click"/>
+            </DockPanel>
         </Grid>
     </Grid>
 </Window>
